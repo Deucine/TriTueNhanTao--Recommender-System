@@ -344,23 +344,5 @@ for idx, title in enumerate(filtered_movies['title'].tolist()):
 
 
 
-# Custom Star Rating with Emoji
-def star_rating(label, max_stars=5):
-    st.write(label)
-    stars = st.radio(
-        "", 
-        options=[i for i in range(1, max_stars + 1)], 
-        format_func=lambda x: "⭐" * x,
-        horizontal=True
-    )
-    return stars
 
-# Star Rating and Review
-st.subheader("Đánh giá và nhận xét")
-user_rating = star_rating("Đánh giá phim (1-5):", max_stars=5)
-user_review = st.text_area("Nhận xét về phim")
-
-if st.button("Gửi"):
-    st.write(f"Đánh giá của bạn: {user_rating} trên 5 sao")
-    st.write(f"Nhận xét của bạn: {user_review}")
 
